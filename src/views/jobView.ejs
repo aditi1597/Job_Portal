@@ -1,0 +1,14 @@
+<div class="card mt-4">
+    <h5 class="card-header"><%= job.title %></h5>
+    <div class="card-body">
+      <h5 class="card-title mb-3"><%= job.company %></h5>
+      <p class="card-text"><i class="fa-solid fa-location-dot"></i></script><%= job.location %></p>
+      <p class="card-text"><i class="fa-solid fa-indian-rupee-sign"></i><%= job.salary %></p>
+      <p class="card-text"><%= job.description %></p>
+    
+      <a href="/applyJob/jobId/<%= job.id%>" class="btn btn-pcrimary">Apply Now</a>
+    </div>
+    <div class="card-footer">
+        <small class="text-body-secondary">   Posted: <%= job.postedDate %> </small>
+      </div>
+  </div>

@@ -1,0 +1,109 @@
+
+<div class="container text-center">
+  <h1 class="text-center mb-4 mt-4" style="margin: auto">Apply Job</h1>
+  <div class="row">
+    <!-- mention job details -->
+    <div class="col bg-secondary-subtle text-black p-3 mb-2">
+    <h3 class="text-center mb-4 mt-4" style="margin: auto">Job Description</h3>
+      <div class="card mt-4 h-90">
+        <h5 class="card-header"><%= job.title %></h5>
+        <div class="card-body">
+          <h5 class="card-title mb-3"><%= job.company %></h5>
+          <p class="card-text">
+            <i class="fa-solid fa-location-dot"></i><%= job.location %>
+          </p>
+          <p class="card-text">Salary: 
+            <i class="fa-solid fa-indian-rupee-sign"></i><%= job.salary %>
+          </p>
+          <p class="card-text"><%= job.description %></p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Posted on: <%= job.postedDate %></small>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+      <!-- job form -->
+      <div class="col bg-secondary-subtle text-black p-4 mb-2">
+        <form
+          action="/applyJob/jobId/<%= job.id %>"
+          method="post"
+          enctype="multipart/form-data"
+          class="form-floating"
+        >
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Full Name"
+              aria-describedby="nameHelp"
+              required
+            />
+            <label for="name">Full Name: </label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="email"
+              aria-describedby="emailHelp"
+              placeholder="Email"
+              required
+            />
+            <label for="email">Email: </label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              name="contact"
+              id="contact"
+              placeholder="Contact"
+              required
+            />
+            <label for="contact" class="form-label">Contact: </label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              class="form-control"
+              list="datalistOptions"
+              id="experience"
+            <!-- 
+                Description: This file contains the EJS template for the job application page.
+                name="experience": This attribute is used to capture the user's work experience in the job application form.
+            -->
+              name="experience"
+              placeholder="experience"
+              required
+            />
+            <datalist id="datalistOptions">
+              <option value="0 Year"></option>
+              <option value="1-2 Years"></option>
+              <option value="3-5 Years"></option>
+              <option value="6-8 Years"></option>
+              <option value="8+ Years"></option>
+            </datalist>
+
+            <label for="experience" class="form-label">Work Experience: </label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="file"
+              class="form-control"
+              name="resume"
+              id="resume"
+              aria-describedby="resumeHelp"
+              accept=".pdf/.doc/.docx/.txt"
+              required
+            />
+            <label for="resume" class="form-label">Upload Resume: </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add Job</button>
+        </form>
+      </div>
+    </div>
+  </div>

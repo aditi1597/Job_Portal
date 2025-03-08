@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <div class="d-flex" style="justify-content: space-between;">
+    <h1 class="mb-4">Browse Jobs</h1>
+    <p>Welcome! <b><i><%= user %></i></b>. You are a <%= role %></p>
+    </div>
+    <div class="row">
+        <% jobs.forEach((job)=> { %>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= job.title %></h5>
+                        <p class="card-text"><%= job.description %></p>
+                        <p class="card-text"><small class="text-muted">Location: <%= job.location %></small></p>
+                        <p class="card-text"><small class="text-muted">Posted on: <%= job.postedDate %></small></p>
+                        <% if(locals.userRole == 'user'){ %>
+                        <a href="/viewJobDetail/<%= job.id %>" class="btn btn-primary">View Details</a>
+                        <% } else { %>
+                        <!-- Check if user is admin -->
+                        <a href="/viewApplicants/<%= job.id %>" class="btn btn-primary">View Applicants</a>
+                        <a href="/updateJob/<%= job.id %>" class="btn btn-warning">Update</a>
+                        <button class="btn btn-danger" onclick="deleteJob('<%= job.id %>')">Delete</button>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <%if(locals.lastVisit){ %>
+        <p class="small-text"> Your Last Visit was on: <%= locals.lastVisit %></p>         
+    <%}%>
+</div>

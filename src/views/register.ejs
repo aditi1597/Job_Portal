@@ -1,0 +1,65 @@
+<div class="container" >
+  <% if(success){ %>
+    <div class="alert alert-success" role="alert">
+        <p>Registration Successful.</p>
+    </div>
+  <% } %> 
+
+    <h1 class="col-md-6 mb-4 mt-4"  style="margin: auto; text-align: center;">Registration Form</h1>
+      <div class="row">
+        <div class="col-md-6 bg-secondary-subtle text-black p-3 mb-2"  style="margin: auto;">
+    
+          <form action="/register" method="post">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                aria-describedby="nameHelp"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Id</label>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                id="email"
+                aria-describedby="emailHelp"
+                required
+              />
+            </div>
+            <div class="mb-3">
+                <label for="contact" class="form-label">Contact number</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  name="contact"
+                  id="contact"
+                  aria-describedby="mobileHelp"
+                  required
+                />
+              </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                id="password"
+                aria-describedby="passwordHelp"
+                required
+              />
+            </div>
+            
+    
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+          <p class="mt-4" style="text-align: center;"> Already a member? <a href="/login">Login</a></p>
+        </div>
+      </div>
+    </div>
+    
