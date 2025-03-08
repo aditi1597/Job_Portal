@@ -1,7 +1,7 @@
 # Application Documentation
 
 ## Overview
-This application is a web-based project built using modern JavaScript frameworks and libraries. It is organized into several folders and files, each serving a specific purpose. The main folders are `public` and `src`, with the entry point being `index.js`.
+This application is a web-based project built using modern JavaScript frameworks and libraries based on MVC architecture. It is organized into several folders and files, each serving a specific purpose. The main folders are `public` and `src`, with the entry point being `index.js`.
 
 ## Functionalities
 - **User Interface**: The application provides a user-friendly interface for interacting with the core functionalities.
